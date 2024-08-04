@@ -9,7 +9,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "jsx": "react"
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
