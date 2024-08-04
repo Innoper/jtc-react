@@ -7,4 +7,5 @@ export interface TextProps {
   color?: React.CSSProperties["color"];
   fontWeight?: React.CSSProperties["fontWeight"];
   transitionduration?: React.CSSProperties["transitionDuration"];
+  imageurl?: string;
 }
