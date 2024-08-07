@@ -1,13 +1,15 @@
 import CardLayout from "./Card/CardLayout";
+import Item from "./Item/Item";
 import Text from "./Text/Text";
-import { TextProps, CardLayoutProps } from "./types";
+import { TextProps, CardLayoutProps, ItemProps } from "./types";
 
 const JTC = {
   Text,
   CardLayout,
-  // 다른 컴포넌트를 여기에 추가할 수 있습니다.
+  Item,
 };
 
 export default JTC;
 export type { TextProps };
 export type { CardLayoutProps };
+export type { ItemProps };
