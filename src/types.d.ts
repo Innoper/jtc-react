@@ -35,7 +35,7 @@ export interface ItemProps {
 
 export interface CheckboxProps {
   id?: number | string;
-  type?: string;
+  type?: "wave" | "bounce";
   width?: React.CSSProperties["width"];
   height?: React.CSSProperties["height"];
   color?: React.CSSProperties["color"];
