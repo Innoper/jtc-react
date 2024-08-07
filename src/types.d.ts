@@ -20,3 +20,15 @@ export interface CardLayoutProps {
   justifycontents?: React.CSSProperties["justifyContent"];
   gap?: React.CSSProperties["gap"];
 }
+
+export interface ItemProps {
+  img?: string;
+  icon?: string;
+  title?: string;
+  sub?: string;
+  desc?: string;
+  bgcolor?: React.CSSProperties["color"];
+  type?: "shadow" | "border" | "drag";
+  children?: React.ReactNode;
+  onClick?: () => void;
+}
