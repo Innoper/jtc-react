@@ -32,3 +32,15 @@ export interface ItemProps {
   children?: React.ReactNode;
   onClick?: () => void;
 }
+
+export interface CheckboxProps {
+  id?: number | string;
+  type?: "wave" | "bounce";
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  color?: React.CSSProperties["color"];
+  icon?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  checked?: boolean;
+}
