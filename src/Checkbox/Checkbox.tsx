@@ -1,4 +1,5 @@
 import { CheckboxProps } from "../types";
+import { BounceCheckboxDiv } from "./CheckboxType/\bBounceCheckbox";
 import { DefaultCheckboxDiv } from "./CheckboxType/DefaultCheckbox";
 import { WaveCheckboxDiv } from "./CheckboxType/WaveCheckbox";
 
@@ -25,6 +26,30 @@ export default function Checkbox({
   const spanClassName = type
     ? `jtc-checkbox-span-${type}`
     : "jtc-checkbox-span";
+
+  if (type === "bounce") {
+    return (
+      <BounceCheckboxDiv width={width} height={height} color={color}>
+        <input
+          className={inputClassName}
+          id={`jtc-checkbox-${id}`}
+          type="checkbox"
+          onChange={onChange}
+          disabled={disabled}
+          checked={checked}
+        />
+        <label className={labelClassName} htmlFor={`jtc-checkbox-${id}`}>
+          <span>
+            {icon ? (
+              <img className="jtc-checkbox-img" src={icon} />
+            ) : (
+              <img className="jtc-checkbox-img" src="/public/path.svg" />
+            )}
+          </span>
+        </label>
+      </BounceCheckboxDiv>
+    );
+  }
 
   if (type === "wave") {
     return (
