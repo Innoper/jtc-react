@@ -1,63 +1,34 @@
-import styled from "styled-components";
 import { CheckboxProps } from "../types";
-
-const CheckboxDiv = styled.div`
-  .jtc-checkbox-input {
-    display: none;
-  }
-
-  .jtc-checkbox-span {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .jtc-checkbox-img,
-  .jtc-checkbox-svg {
-    width: 15px;
-    height: 15px;
-    display: none;
-  }
-
-  .jtc-checkbox-input:checked + .jtc-checkbox-label .jtc-checkbox-img,
-  .jtc-checkbox-input:checked + .jtc-checkbox-label .jtc-checkbox-svg {
-    display: block;
-  }
-`;
-
-interface CheckboxComponentProps extends CheckboxProps {
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  disabled?: boolean;
-  checked?: boolean;
-}
+import { DefaultCheckboxDiv } from "./CheckboxType/DefaultCheckbox";
 
 /**
  * JTC Checkbox Component
  */
 export default function Checkbox({
+  id,
   icon,
   onChange,
   disabled = false,
   checked = false,
-}: CheckboxComponentProps) {
+}: CheckboxProps) {
+  const inputClassName = "jtc-checkbox-input";
+  const labelClassName = "jtc-checkbox-label";
+  const spanClassName = "jtc-checkbox-span";
+
   return (
-    <CheckboxDiv>
+    <DefaultCheckboxDiv>
       <input
-        className="jtc-checkbox-input"
-        id="cbx-15"
+        className={inputClassName}
+        id={`jtc-checkbox-${id}`}
         type="checkbox"
         onChange={onChange}
         disabled={disabled}
         checked={checked}
       />
-      <label className="jtc-checkbox-label" htmlFor="cbx-15">
-        <span className="jtc-checkbox-span">
+      <label className={labelClassName} htmlFor={`jtc-checkbox-${id}`}>
+        <span className={spanClassName}>
           {icon ? (
-            <img className="jtc-checkbox-img" src={icon} />
+            <div className="jtc-checkbox-img">{icon}</div>
           ) : (
             <svg
               className="jtc-checkbox-svg"
@@ -75,6 +46,6 @@ export default function Checkbox({
           )}
         </span>
       </label>
-    </CheckboxDiv>
+    </DefaultCheckboxDiv>
   );
 }
