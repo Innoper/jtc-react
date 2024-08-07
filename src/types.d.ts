@@ -32,3 +32,10 @@ export interface ItemProps {
   children?: React.ReactNode;
   onClick?: () => void;
 }
+
+export interface CheckboxProps {
+  icon?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  checked?: boolean;
+}
