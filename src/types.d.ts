@@ -34,8 +34,11 @@ export interface ItemProps {
 }
 
 export interface CheckboxProps {
-  id: number | string;
+  id?: number | string;
   type?: string;
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  color?: React.CSSProperties["color"];
   icon?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;

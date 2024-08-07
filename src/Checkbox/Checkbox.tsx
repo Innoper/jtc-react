@@ -7,6 +7,9 @@ import { DefaultCheckboxDiv } from "./CheckboxType/DefaultCheckbox";
 export default function Checkbox({
   id,
   icon,
+  width = "15px",
+  height = "15px",
+  color = "#727272",
   onChange,
   disabled = false,
   checked = false,
@@ -16,7 +19,7 @@ export default function Checkbox({
   const spanClassName = "jtc-checkbox-span";
 
   return (
-    <DefaultCheckboxDiv>
+    <DefaultCheckboxDiv width={width} height={height} color={color}>
       <input
         className={inputClassName}
         id={`jtc-checkbox-${id}`}
@@ -28,21 +31,9 @@ export default function Checkbox({
       <label className={labelClassName} htmlFor={`jtc-checkbox-${id}`}>
         <span className={spanClassName}>
           {icon ? (
-            <div className="jtc-checkbox-img">{icon}</div>
+            <img className="jtc-checkbox-img" src={icon} />
           ) : (
-            <svg
-              className="jtc-checkbox-svg"
-              width="14"
-              height="11"
-              viewBox="0 0 14 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 10.42L0 5.42L1.41 4.01L5 7.59L12.59 0L14 1.42L5 10.42Z"
-                fill="#323232"
-              />
-            </svg>
+            <img className="jtc-checkbox-img" src="/public/path.svg" />
           )}
         </span>
       </label>

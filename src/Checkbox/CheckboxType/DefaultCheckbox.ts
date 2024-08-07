@@ -1,35 +1,39 @@
 import styled from "styled-components";
+import { CheckboxProps } from "../../types";
 
 /**
  * Default Checkbox styled-components
  */
-export const DefaultCheckboxDiv = styled.div`
-  width: 25px;
-  height: 25px;
+export const DefaultCheckboxDiv = styled.div<CheckboxProps>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
 
   .jtc-checkbox-input {
     display: none;
   }
 
   .jtc-checkbox-span {
-    width: 25px;
-    height: 25px;
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid;
+    border-color: ${(props) => props.color};
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .jtc-checkbox-img,
-  .jtc-checkbox-svg {
-    width: 12px;
-    height: 12px;
+  .jtc-checkbox-img {
+    width: ${(props) => `calc(${props.width} / 2)`};
+    height: ${(props) => `calc(${props.height} / 2)`};
     display: none;
   }
 
-  .jtc-checkbox-input:checked + .jtc-checkbox-label .jtc-checkbox-img,
-  .jtc-checkbox-input:checked + .jtc-checkbox-label .jtc-checkbox-svg {
+  .jtc-checkbox-input:checked + .jtc-checkbox-label .jtc-checkbox-span {
+    background-color: ${(props) => props.color};
+  }
+
+  .jtc-checkbox-input:checked + .jtc-checkbox-label .jtc-checkbox-img {
     display: block;
   }
 `;
