@@ -28,5 +28,7 @@ export interface ItemProps {
   sub?: string;
   desc?: string;
   bgcolor?: React.CSSProperties["color"];
-  type?: string;
+  type?: "shadow" | "border" | "drag";
+  children?: React.ReactNode;
+  onClick?: () => void;
 }
