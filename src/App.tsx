@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Checkbox from "./Checkbox/Checkbox";
+import JTC from ".";
+import Input from "./Input/Input";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [checked, setChecked] = useState<boolean>(false);
+
+  console.log(checked);
+
+  const [value, setValue] = useState("");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
 
   return (
     <>
+      <JTC.Checkbox
+        id={1}
+        width="15px"
+        height="15px"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+        color="green"
+        // icon="/public/vite.svg"
+      />
+      <span>gkdnld</span>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>공통 Input 컴포넌트 예제</h1>
+        <Input
+          // type="placeholder"
+          width="300px"
+          height="30px"
+          icon="/public/vite.svg"
+          value={value}
+          onChange={handleChange}
+          placeholder="placeholder"
+          bordercolor="#c993a5"
+        />
+        <p>입력값: {value}</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
