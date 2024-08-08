@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "jtc-react": ["node_modules/jtc-react/dist"]
+    },
+    "typeRoots": ["node_modules/@types", "node_modules/jtc-react/dist"],
     "target": "ES6",
     "module": "ESNext",
     "declaration": true,

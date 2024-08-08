@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: "src/index.ts",
-      name: "jtc-react",
+      name: "JTC",
       fileName: (format) => `jtc-react.${format}.js`,
       formats: ["es", "umd"],
     },
