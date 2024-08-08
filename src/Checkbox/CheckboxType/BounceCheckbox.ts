@@ -1,5 +1,16 @@
 import styled, { keyframes } from "styled-components";
-import { CheckboxProps } from "../../types";
+
+interface CheckboxProps {
+  id?: number | string;
+  type?: "wave" | "bounce";
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  color?: React.CSSProperties["color"];
+  icon?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  checked?: boolean;
+}
 
 // bounce 애니메이션 정의
 const bounce = keyframes`

@@ -1,5 +1,16 @@
-import { CardLayoutProps } from "../types";
+import React from "react";
 import BlurLayout from "./CardLayoutType/BlurLayout";
+
+interface CardLayoutProps {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  diplay?: React.CSSProperties["display"];
+  flexwrap?: React.CSSProperties["flexWrap"];
+  justifycontents?: React.CSSProperties["justifyContent"];
+  gap?: React.CSSProperties["gap"];
+}
 
 interface Props extends CardLayoutProps {
   type: string;
@@ -8,7 +19,7 @@ interface Props extends CardLayoutProps {
 /**
  * JTC CardLayout Component
  */
-export default function CardLayout({
+const CardLayout: React.FC<Props> = ({
   type,
   children,
   style,
@@ -18,7 +29,7 @@ export default function CardLayout({
   flexwrap,
   justifycontents,
   gap,
-}: Props) {
+}) => {
   if (type === "blur") {
     return (
       <BlurLayout
@@ -36,4 +47,6 @@ export default function CardLayout({
   }
 
   return <div>{children}</div>;
-}
+};
+
+export default CardLayout;

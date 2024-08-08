@@ -1,6 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { ItemProps } from "../types";
+
+interface ItemProps {
+  img?: string;
+  icon?: string;
+  title?: string;
+  sub?: string;
+  desc?: string;
+  bgcolor?: React.CSSProperties["color"];
+  type?: "shadow" | "border" | "drag";
+  children?: React.ReactNode;
+  onClick?: () => void;
+}
 
 interface ItemComponentProps extends ItemProps {
   isdragging?: string;
@@ -85,7 +96,7 @@ const ItemDiv = styled.div<ItemComponentProps>`
   }
 `;
 
-export default function Item({
+const Item: React.FC<ItemProps> = ({
   img,
   icon,
   title,
@@ -95,7 +106,7 @@ export default function Item({
   type,
   onClick,
   children,
-}: ItemProps) {
+}) => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
   const itemRef = useRef<HTMLDivElement>(null);
@@ -179,4 +190,6 @@ export default function Item({
       {type === "drag" && <div className="jtc-item-children">{children}</div>}
     </ItemDiv>
   );
-}
+};
+
+export default Item;

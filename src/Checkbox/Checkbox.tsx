@@ -1,12 +1,24 @@
-import { CheckboxProps } from "../types";
+import React from "react";
 import { BounceCheckboxDiv } from "./CheckboxType/\bBounceCheckbox";
 import { DefaultCheckboxDiv } from "./CheckboxType/DefaultCheckbox";
 import { WaveCheckboxDiv } from "./CheckboxType/WaveCheckbox";
 
+interface CheckboxProps {
+  id?: number | string;
+  type?: "wave" | "bounce";
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  color?: React.CSSProperties["color"];
+  icon?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  checked?: boolean;
+}
+
 /**
  * JTC Checkbox Component
  */
-export default function Checkbox({
+const Checkbox: React.FC<CheckboxProps> = ({
   id,
   type,
   icon,
@@ -16,7 +28,7 @@ export default function Checkbox({
   onChange,
   disabled = false,
   checked = false,
-}: CheckboxProps) {
+}) => {
   const inputClassName = type
     ? `jtc-checkbox-input-${type}`
     : "jtc-checkbox-input";
@@ -96,4 +108,6 @@ export default function Checkbox({
       </label>
     </DefaultCheckboxDiv>
   );
-}
+};
+
+export default Checkbox;
