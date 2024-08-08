@@ -46,10 +46,10 @@ export interface CheckboxProps {
 }
 
 export interface InputProps {
-  type?: string;
+  type?: "placeholder";
   width?: React.CSSProperties["width"];
   height?: React.CSSProperties["height"];
-  focusBorderColor?: React.CSSProperties["color"];
+  bordercolor?: React.CSSProperties["color"];
   icon?: string;
   value?: string | number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;

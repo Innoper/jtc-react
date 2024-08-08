@@ -8,6 +8,9 @@ export const DefaultInputDiv = styled.div<InputProps>`
   position: relative;
   display: inline-block;
 
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+
   img {
     height: ${(props) => `calc(${props.height} / 2)`};
     position: absolute;
@@ -19,8 +22,8 @@ export const DefaultInputDiv = styled.div<InputProps>`
   }
 
   input {
-    width: ${(props) => props.width};
-    height: ${(props) => props.height};
+    width: 100%;
+    height: 100%;
     padding: 15px;
     border: 0.5px solid;
     border-color: rgba(0, 0, 0, 0.5);
@@ -28,8 +31,9 @@ export const DefaultInputDiv = styled.div<InputProps>`
     outline: none;
 
     &:focus {
-      border-color: ${({ focusBorderColor }) => focusBorderColor || "#007BFF"};
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      border-color: ${({ bordercolor }) => bordercolor || "#007BFF"};
+      box-shadow: 0 0 5px
+        ${({ bordercolor }) => bordercolor || "rgba(0, 123, 255, 0.3)"};
     }
   }
 
