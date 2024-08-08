@@ -1,5 +1,15 @@
 import styled from "styled-components";
-import { InputProps } from "../../types";
+
+interface InputProps {
+  type?: "placeholder";
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  bordercolor?: React.CSSProperties["color"];
+  icon?: string;
+  value?: string | number;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+}
 
 /**
  * Placeholder Input styled-components

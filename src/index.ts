@@ -1,27 +1,5 @@
-import CardLayout from "./Card/CardLayout";
-import Checkbox from "./Checkbox/Checkbox";
-import Input from "./Input/Input";
-import Item from "./Item/Item";
-import Text from "./Text/Text";
-import {
-  TextProps,
-  CardLayoutProps,
-  ItemProps,
-  CheckboxProps,
-  InputProps,
-} from "./types";
-
-const JTC = {
-  Text,
-  CardLayout,
-  Item,
-  Checkbox,
-  Input,
-};
-
-export default JTC;
-export type { TextProps };
-export type { CardLayoutProps };
-export type { ItemProps };
-export type { CheckboxProps };
-export type { InputProps };
+export { default as CardLayout } from "./Card/CardLayout";
+export { default as Checkbox } from "./Checkbox/Checkbox";
+export { default as Input } from "./Input/Input";
+export { default as Item } from "./Item/Item";
+export { default as Text } from "./Text/Text";

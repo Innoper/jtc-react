@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "jtc-react": ["node_modules/jtc-react/dist"]
+      "*": ["src/*"]
     },
-    "typeRoots": ["node_modules/@types", "node_modules/jtc-react/dist"],
+    "typeRoots": ["node_modules/@types", "src/types"],
     "target": "ES6",
     "module": "ESNext",
     "declaration": true,

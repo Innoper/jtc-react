@@ -1,5 +1,15 @@
 import styled from "styled-components";
-import { CardLayoutProps } from "../../types";
+
+interface CardLayoutProps {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  diplay?: React.CSSProperties["display"];
+  flexwrap?: React.CSSProperties["flexWrap"];
+  justifycontents?: React.CSSProperties["justifyContent"];
+  gap?: React.CSSProperties["gap"];
+}
 
 const BlurLayoutDiv = styled.div<CardLayoutProps>`
   width: ${(props) => props.width || "min-content"};

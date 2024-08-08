@@ -1,8 +1,19 @@
-import { InputProps } from "../types";
+import React from "react";
 import { DefaultInputDiv } from "./InputType/DefaultInput";
 import { PlaceholderInputDiv } from "./InputType/PlaceHolderInput";
 
-export default function Input({
+interface InputProps {
+  type?: "placeholder";
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  bordercolor?: React.CSSProperties["color"];
+  icon?: string;
+  value?: string | number;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+}
+
+const Input: React.FC<InputProps> = ({
   type,
   width,
   height,
@@ -11,7 +22,7 @@ export default function Input({
   placeholder,
   value,
   onChange,
-}: InputProps) {
+}) => {
   if (type === "placeholder") {
     return (
       <PlaceholderInputDiv
@@ -51,4 +62,6 @@ export default function Input({
       />
     </DefaultInputDiv>
   );
-}
+};
+
+export default Input;
